@@ -1,4 +1,4 @@
-# How to build and run on Linux
+# How to build and run code on Linux
 
 ## Clear terminal
 
