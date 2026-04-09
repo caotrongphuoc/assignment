@@ -16,6 +16,6 @@ typedef struct {
 	cmdl_func_t  func;
 } my_cmdl_t;
 
-uint8_t my_cmd_parse(my_cmdl_t* table, uint8_t* input);
+uint8_t cmdl(my_cmdl_t* table, uint8_t* input);
 
 #endif
