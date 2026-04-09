@@ -1,5 +1,5 @@
-#ifndef CMDL_H
-#define CMDL_H
+#ifndef __CMDL_H__
+#define __CMDL_H__
 
 #include <stdint.h>
 
@@ -15,8 +15,8 @@ typedef void (*cmd_func_t)(uint8_t*);
 typedef struct {
 	const char* cmd;
 	cmd_func_t  func;
-} my_cmd_t;
+} my_cmdl_t;
 
-uint8_t my_cmd_parse(my_cmd_t* table, uint8_t* input);
+uint8_t my_cmdl_parse(my_cmd_t* table, uint8_t* input);
 
 #endif
