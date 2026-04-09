@@ -15,7 +15,7 @@ typedef struct {
 	cmdl_func_t func;
 } my_cmdl_t;
 
-uint8_t my_cmd_parse(my_cmdl_t* table, uint8_t* input) {
+uint8_t cmdl(my_cmdl_t* table, uint8_t* input) {
 	uint8_t cmd[CMDL_MAX_SIZE];
 	uint8_t len = 0;
 	uint8_t i = 0;
@@ -61,24 +61,24 @@ int main() {
 	uint8_t ret;
 
 	// test 1: null table
-	ret = my_cmd_parse(NULL, (uint8_t*)"help ");
+	ret = cmdl(NULL, (uint8_t*)"help ");
 	printf("test1 null_table:   %s\n", ret == CMDL_TABLE_NULL ? "PASS" : "FAIL");
 
 	// test 2: cmd available
 	called = -1;
-	ret = my_cmd_parse(table, (uint8_t*)"help ");
+	ret = cmdl(table, (uint8_t*)"help ");
 	printf("test2 valid_cmd:    %s\n", (ret == CMDL_OK && called == 0) ? "PASS" : "FAIL");
 
 	//test 3: cmd not exist
 	called = -1;
-	ret = my_cmd_parse(table, (uint8_t*)"reboot ");
+	ret = cmdl(table, (uint8_t*)"reboot ");
 	printf("test3 not_found:    %s\n", (ret == CMDL_NOT_FOUND && called == -1) ? "PASS" : "FAIL");
 
 	//test 4: cmd too long
 	char big[40];
 	memset(big, 'a', 39);
 	big[39] = 0;
-	ret = my_cmd_parse(table, (uint8_t*)big);
+	ret = cmdl(table, (uint8_t*)big);
 	printf("test4 too_long:     %s\n", ret == CMDL_TOO_LONG ? "PASS" : "FAIL");
 
 	return 0;
