@@ -1,3 +1,5 @@
+# HOW TO BUILD AND RUN ON LINUX
+
 #Build unit_test <br>
 unit_test: unit_test.c <br>
 	=> make unit_test <br>
