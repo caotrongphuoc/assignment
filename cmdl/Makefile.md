@@ -1,11 +1,11 @@
-#Build unit_test
-unit_test: unit_test.c
-	make unit_test
+#Build unit_test <br>
+unit_test: unit_test.c <br>
+	make unit_test <br>
 
-#run
-run: unit_test
-	./unit_test
+#run <br>
+run: unit_test <br>
+	./unit_test <br>
 
-#clean
-clean:
-	make clean
+#clean <br>
+clean: <br>
+	make clean <br>
