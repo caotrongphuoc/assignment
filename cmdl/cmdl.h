@@ -14,8 +14,8 @@ typedef void (*cmdl_func_t)(uint8_t*);
 typedef struct {
 	const char* cmd;
 	cmdl_func_t  func;
-} my_cmdl_t;
+} cmdl_t;
 
-uint8_t cmdl(my_cmdl_t* table, uint8_t* input);
+uint8_t cmdl_parse(cmdl_t* table, uint8_t* input);
 
 #endif
